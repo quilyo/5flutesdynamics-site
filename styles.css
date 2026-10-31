@@ -34,8 +34,6 @@ h3{font-size:1.4rem;margin:0 0 .3em}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--bronze);border-radius:6px;padding:26px}
 .card p{margin:0;color:#c9c5bf}
-.ig-embed{margin:24px 0 28px;min-height:220px;border:2px dashed #3a3a3a;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:20px}
-.ig-placeholder{color:var(--gray);text-align:center;margin:0}
 .form{display:grid;gap:16px;margin-top:20px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
@@ -61,3 +59,13 @@ address{font-style:normal;line-height:1.9}
   .hero{padding:70px 0 60px}
   .brand img{height:44px}
 }
+
+/* Photo gallery */
+.gallery{position:relative;margin:24px 0 28px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 10px;scrollbar-width:thin;scrollbar-color:#b8956a #151515}
+.slide{flex:0 0 min(260px,72vw);margin:0;scroll-snap-align:start;border-radius:6px;overflow:hidden;border:1px solid #2a2a2a;background:#111}
+.slide img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.g-btn{position:absolute;top:50%;transform:translateY(-60%);z-index:2;width:42px;height:42px;border-radius:50%;border:2px solid #b8956a;background:rgba(0,0,0,.75);color:#d4b184;font-size:28px;line-height:1;cursor:pointer}
+.g-btn:hover{background:#b8956a;color:#000}
+.g-prev{left:-8px}.g-next{right:-8px}
+@media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}

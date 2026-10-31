@@ -17,3 +17,18 @@
       .finally(function(){b.disabled=false});
   });
 })();
+
+(function(){
+  var tr=document.getElementById('track'); if(!tr) return;
+  var g=document.getElementById('gallery'),paused=false,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function step(d){var w=tr.firstElementChild.getBoundingClientRect().width+14;
+    var max=tr.scrollWidth-tr.clientWidth;
+    if(d>0&&tr.scrollLeft>=max-4){tr.scrollTo({left:0});}
+    else if(d<0&&tr.scrollLeft<=4){tr.scrollTo({left:max});}
+    else{tr.scrollBy({left:d*w});}}
+  g.querySelector('.g-prev').addEventListener('click',function(){step(-1)});
+  g.querySelector('.g-next').addEventListener('click',function(){step(1)});
+  ['mouseenter','focusin','touchstart'].forEach(function(e){g.addEventListener(e,function(){paused=true})});
+  ['mouseleave','focusout'].forEach(function(e){g.addEventListener(e,function(){paused=false})});
+  if(!reduce){setInterval(function(){if(!paused&&!document.hidden)step(1)},3500);}
+})();
