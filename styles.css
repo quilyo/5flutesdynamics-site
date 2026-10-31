@@ -69,3 +69,9 @@ address{font-style:normal;line-height:1.9}
 .g-btn:hover{background:#b8956a;color:#000}
 .g-prev{left:-8px}.g-next{right:-8px}
 @media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
+.mat-list{list-style:none;margin:0 0 10px;padding:0}
+.mat-list li{padding:6px 0 6px 18px;position:relative;border-bottom:1px solid #262626}
+.mat-list li:last-child{border-bottom:0}
+.mat-list li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:7px;background:#b8956a;transform:rotate(45deg)}
+.mat-list strong{color:#e6d3b8}
+.mat-note{font-size:.95rem;opacity:.8;margin:0}
