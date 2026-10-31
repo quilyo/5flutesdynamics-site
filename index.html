@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 Flutes Dynamics LLC | CNC Machining in New York</title>
+<meta name="description" content="5 Flutes Dynamics is a New York CNC machine shop making prototype and low-volume milled parts in aluminum and plastics. Quick quotes, clear communication.">
+<link rel="canonical" href="https://5flutesdynamics.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="5 Flutes Dynamics LLC | CNC Machining in New York">
+<meta property="og:description" content="Prototype and low-volume CNC milled parts in aluminum and plastics. Request a quote today.">
+<meta property="og:url" content="https://5flutesdynamics.com/">
+<meta property="og:image" content="https://5flutesdynamics.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand"><img src="logo.png" alt="5 Flutes Dynamics – Manufacturing Excelsior" width="720" height="227"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#instagram">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#quote" class="btn btn-primary">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">CNC Machine Shop · New York</p>
+      <h1>Precision machined parts,<br><span class="accent">from prototype to production run.</span></h1>
+      <p class="lead">We mill prototype and low-volume parts in aluminum and engineering plastics. Send a drawing and get a quick, clear quote.</p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn-primary">Request a quote</a>
+        <a href="#instagram" class="btn btn-ghost">See our work</a>
+      </div>
+      <p class="tagline">Manufacturing Excelsior</p>
+    </div>
+  </section>
+
+  <section id="capabilities" class="section">
+    <div class="wrap">
+      <h2>Capabilities</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>CNC Milling</h3>
+          <p>Prototype and low-volume parts on a Hurco VMX30 vertical machining center.</p>
+        </article>
+        <article class="card">
+          <h3>Materials</h3>
+          <p>Aluminum and plastics, including 6061 aluminum, UHMW and PEEK. Ask about other materials.</p>
+        </article>
+        <article class="card">
+          <h3>Inspection</h3>
+          <p>In-house inspection, with documented inspection reports shipped with your parts.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram" class="section section-alt">
+    <div class="wrap">
+      <h2>Recent work</h2>
+      <p class="muted">Fresh from the machine. Follow along on Instagram.</p>
+      <!--
+        INSTAGRAM FEED WIDGET GOES HERE
+        Paste the embed snippet from Behold (behold.so) or Elfsight inside the
+        div below, replacing the placeholder paragraph. Keep the wrapper div.
+      -->
+      <div class="ig-embed" id="ig-embed">
+        <p class="ig-placeholder">Instagram feed widget placeholder: paste the Behold / Elfsight embed code here.</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.instagram.com/5flutesdynamics/" target="_blank" rel="noopener">Follow @5flutesdynamics</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrap narrow">
+      <h2>About</h2>
+      <p>5 Flutes Dynamics is a small New York machine shop focused on precision machined parts. We keep things simple: quick quotes, clear communication, and parts that are inspected before they leave the shop.</p>
+    </div>
+  </section>
+
+  <section id="quote" class="section section-alt">
+    <div class="wrap narrow">
+      <h2>Request a quote</h2>
+      <p class="muted">Tell us about your part. Please email drawings or CAD files (STEP, PDF) to <a href="mailto:yolquin@5flutesdynamics.com">yolquin@5flutesdynamics.com</a>.</p>
+      <form id="quote-form" class="form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New quote request – 5flutesdynamics.com">
+        <input type="hidden" name="from_name" value="5 Flutes Dynamics website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="grid2">
+          <label>Name<input name="name" required autocomplete="name"></label>
+          <label>Company<input name="company" autocomplete="organization"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          <label><span>Phone <span class="opt">(optional)</span></span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label>Material<input name="material" placeholder="e.g. 6061 aluminum, PEEK"></label>
+          <label>Quantity<input name="quantity" inputmode="numeric" placeholder="e.g. 10"></label>
+        </div>
+        <label>Part description<textarea name="description" rows="5" required placeholder="Size, features, finish, due date…"></textarea></label>
+        <button type="submit" class="btn btn-primary">Send request</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <img src="logo.png" alt="" class="footer-logo" width="720" height="227" loading="lazy">
+    </div>
+    <address>
+      <strong>Contact</strong><br>
+      <a href="mailto:yolquin@5flutesdynamics.com">yolquin@5flutesdynamics.com</a><br>
+      <a href="tel:+13478201827">347-820-1827</a><br>
+      New York<br>
+      <a href="https://www.instagram.com/5flutesdynamics/" target="_blank" rel="noopener">Instagram @5flutesdynamics</a>
+    </address>
+  </div>
+  <p class="copy">© 2026 5 Flutes Dynamics LLC</p>
+</footer>
+<script src="main.js" defer></script>
+</body>
+</html>

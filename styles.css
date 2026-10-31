@@ -1,0 +1,63 @@
+:root{--bg:#000;--bg2:#0e0e0e;--card:#151515;--line:#2a2a2a;--bronze:#b8956a;--bronze2:#d8b890;--gray:#8a8a8a;--text:#e8e6e3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--bronze2)}
+h1,h2,h3,.btn,.nav,.eyebrow{font-family:Rajdhani,"Barlow Condensed",system-ui,sans-serif}
+h1{font-size:clamp(2.1rem,5.5vw,3.8rem);line-height:1.05;margin:.3em 0}
+h2{font-size:2.2rem;margin:0 0 .5em;color:var(--bronze)}
+h3{font-size:1.4rem;margin:0 0 .3em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+.accent{color:var(--bronze)}
+.muted{color:var(--gray)}
+.site-header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand img{height:60px;width:auto}
+.nav{display:flex;align-items:center;gap:26px;font-size:1.1rem;font-weight:600}
+.nav a{color:var(--text);text-decoration:none}
+.nav a:hover{color:var(--bronze2)}
+.nav-toggle{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.nav-toggle span{display:block;width:26px;height:2px;background:var(--text);margin:5px 0}
+.btn{display:inline-block;padding:.6em 1.3em;border-radius:4px;font-weight:700;font-size:1.1rem;text-decoration:none;border:2px solid var(--bronze);cursor:pointer;letter-spacing:.02em}
+.btn-primary,.nav a.btn-primary{background:var(--bronze);color:#000}
+.btn-primary:hover,.nav a.btn-primary:hover{background:var(--bronze2);border-color:var(--bronze2);color:#000}
+.btn-ghost{color:var(--bronze2);background:transparent}
+.hero{padding:110px 0 100px;background:radial-gradient(ellipse at 80% 0%,#2a2218 0%,#000 60%);border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--gray);text-transform:uppercase;letter-spacing:.2em;font-weight:600;margin:0}
+.lead{font-size:1.2rem;max-width:620px;color:#cfcac3}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.tagline{margin-top:40px;color:var(--gray);font-style:italic;font-family:Georgia,serif;font-size:1.1rem}
+.section{padding:80px 0}
+.section-alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--bronze);border-radius:6px;padding:26px}
+.card p{margin:0;color:#c9c5bf}
+.ig-embed{margin:24px 0 28px;min-height:220px;border:2px dashed #3a3a3a;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:20px}
+.ig-placeholder{color:var(--gray);text-align:center;margin:0}
+.form{display:grid;gap:16px;margin-top:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+.opt{color:var(--gray);font-weight:400}
+input,textarea{width:100%;background:#000;color:var(--text);border:1px solid #333;border-radius:4px;padding:12px;font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--bronze);border-color:var(--bronze)}
+.hp{display:none}
+.form .btn{justify-self:start}
+.form-status{margin:0;min-height:1.5em}
+.form-status.ok{color:#8fd19e}.form-status.err{color:#f08a8a}
+.site-footer{padding:50px 0 24px;border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.footer-logo{width:260px}
+address{font-style:normal;line-height:1.9}
+.copy{text-align:center;color:var(--gray);font-size:.9rem;margin:36px 0 0}
+@media (max-width:820px){
+  .nav-toggle{display:block}
+  .nav{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:#000;border-bottom:1px solid var(--line);padding:10px 20px 20px}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;width:100%;text-align:center}
+  .nav a.btn{margin-top:8px}
+  .cards,.grid2{grid-template-columns:1fr}
+  .hero{padding:70px 0 60px}
+  .brand img{height:44px}
+}
