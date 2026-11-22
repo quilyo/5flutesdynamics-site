@@ -41,7 +41,7 @@
     <div class="wrap">
       <p class="eyebrow">CNC Machine Shop · New York</p>
       <h1>Precision machined parts,<br><span class="accent">from prototype to production run.</span></h1>
-      <p class="lead">We mill prototype and low-volume parts in aluminum and engineering plastics. Send a drawing and get a quick, clear quote.</p>
+      <p class="lead">Upload your drawing or a photo of your part and get a fast, clear quote. One-offs, prototypes and short runs, inspected before they ship.</p>
       <div class="hero-cta">
         <a href="#quote" class="btn btn-primary">Request a quote</a>
         <a href="#instagram" class="btn btn-ghost">See my experience</a>
@@ -100,12 +100,14 @@
   <section id="quote" class="section section-alt">
     <div class="wrap narrow">
       <h2>Request a quote</h2>
-      <p class="muted">Tell us about your part. Please email drawings or CAD files (STEP, PDF) to <a href="mailto:yolquin@5flutesdynamics.com">yolquin@5flutesdynamics.com</a>.</p>
-      <form id="quote-form" class="form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="bd0974c5-de88-44b8-bf13-dcf222dba87a">
-        <input type="hidden" name="subject" value="New quote request – 5flutesdynamics.com">
-        <input type="hidden" name="from_name" value="5 Flutes Dynamics website">
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="muted">Tell us about your part and attach a drawing, PDF or photo. Larger CAD files can be emailed to <a href="mailto:yolquin@5flutesdynamics.com">yolquin@5flutesdynamics.com</a>.</p>
+      <p id="sent-msg" class="form-status ok" role="status" hidden>Thanks! Your request was sent. We'll get back to you shortly.</p>
+      <form id="quote-form" class="form" action="https://formsubmit.co/yolquin@5flutesdynamics.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New quote request – 5flutesdynamics.com">
+        <input type="hidden" name="_next" value="https://5flutesdynamics.com/?sent=1#quote">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="grid2">
           <label>Name<input name="name" required autocomplete="name"></label>
           <label>Company<input name="company" autocomplete="organization"></label>
@@ -115,6 +117,10 @@
           <label>Quantity<input name="quantity" inputmode="numeric" placeholder="e.g. 10"></label>
         </div>
         <label>Part description<textarea name="description" rows="5" required placeholder="Size, features, finish, due date…"></textarea></label>
+        <label class="upload"><span>Drawing or photo of your part <span class="opt">(PDF, JPG, PNG, STEP · 10 MB total)</span></span>
+          <input type="file" name="attachment" id="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.webp,.step,.stp,image/*,application/pdf">
+        </label>
+        <p id="file-list" class="file-list muted" aria-live="polite"></p>
         <button type="submit" class="btn btn-primary">Send request</button>
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>

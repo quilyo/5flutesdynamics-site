@@ -3,19 +3,23 @@
   t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o)});
   n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');t.setAttribute('aria-expanded',false)}});
   var f=document.getElementById('quote-form'),s=document.getElementById('form-status');
-  var mail='mailto:yolquin@5flutesdynamics.com?subject=Quote%20request';
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var b=f.querySelector('button[type=submit]');b.disabled=true;s.className='form-status';s.textContent='Sending…';
-    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(function(r){return r.json()})
-      .then(function(d){
-        if(d.success){f.reset();s.className='form-status ok';s.textContent='Thanks! Your request was sent. We\'ll get back to you shortly. Remember to email your drawings or CAD files.';}
-        else throw new Error(d.message);
-      })
-      .catch(function(){s.className='form-status err';s.innerHTML='Sorry, something went wrong. Please <a href="'+mail+'">email us directly</a>.';})
-      .finally(function(){b.disabled=false});
+  var fi=document.getElementById('attachment'),fl=document.getElementById('file-list');
+  var MAX=10*1024*1024;
+  function total(){var t=0;for(var i=0;i<fi.files.length;i++)t+=fi.files[i].size;return t}
+  fi.addEventListener('change',function(){
+    var n=[];for(var i=0;i<fi.files.length;i++)n.push(fi.files[i].name);
+    var t=total();
+    if(t>MAX){fl.className='file-list err';fl.textContent='Files are '+(t/1048576).toFixed(1)+' MB. Please keep it under 10 MB total, or email larger files.';}
+    else{fl.className='file-list muted';fl.textContent=n.length?'Attached: '+n.join(', '):'';}
   });
+  f.addEventListener('submit',function(e){
+    if(total()>MAX){e.preventDefault();fi.focus();return;}
+    var b=f.querySelector('button[type=submit]');b.disabled=true;s.className='form-status';s.textContent='Sending…';
+  });
+  if(/[?&]sent=1/.test(location.search)){
+    document.getElementById('sent-msg').hidden=false;
+    history.replaceState(null,'',location.pathname+'#quote');
+  }
 })();
 
 (function(){
